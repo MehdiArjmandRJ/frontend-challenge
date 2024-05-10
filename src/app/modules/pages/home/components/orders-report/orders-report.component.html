@@ -1,0 +1,24 @@
+<section class="report-section">
+  <app-tabs class="w-100" margin="0px" fontSize="10px" fontWeight="500" tabMinWidth="100px" width="45%"
+    tabsHeadCssClass="custom-head" (activeTabIndex)="onTabChange($event)">
+    <app-tab [active]="true" title="سفارشات فعال">
+      <app-active-orders [activeOrders]="activeOrders" />
+    </app-tab>
+
+    <app-tab title="همه سفارشات">
+      <app-orders *ngIf="tabIndex === 1" [orders]="allTodayOrders" />
+    </app-tab>
+
+    <app-tab title="خرید">
+      <app-orders *ngIf="tabIndex === 2" [orders]="buyOrders" />
+    </app-tab>
+
+    <app-tab title="فروش">
+      <app-orders *ngIf="tabIndex === 3" [orders]="saleOrders" />
+    </app-tab>
+
+    <app-tab title="معاملات">
+      <app-trades *ngIf="tabIndex === 4" [trades]="trades" />
+    </app-tab>
+  </app-tabs>
+</section>

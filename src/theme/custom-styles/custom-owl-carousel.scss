@@ -1,0 +1,21 @@
+#notification-screen{
+  .owl-theme .owl-dots .owl-dot span {
+    width: 5px;
+    height: 5px;
+    margin: 2px;
+    background: rgb(0 0 0 / 15%);
+    border-radius: 30px;
+  }
+
+  .owl-theme .owl-nav.disabled + .owl-dots {
+    margin-top: -25px;
+    transform: translateZ(10px);
+    text-align: right;
+    margin-right: 15px;
+  }
+
+  .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span{
+    background: rgb(0 0 0 / 30%);
+    transform: scale(1.2);
+  }
+}

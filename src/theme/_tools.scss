@@ -1,0 +1,39 @@
+@mixin Subtitle2-Medium {
+  font-family: $font-family-base;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+@mixin Body2-Regular {
+  font-family: $font-family-base;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+@mixin Caption2-Regular {
+  font-family: $font-family-base;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 20px;
+}
+
+@mixin Caption1-Medium {
+  font-family: $font-family-base;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 15px;
+}
+
+@mixin H2-Bold {
+  font-family: $font-family-base;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+}

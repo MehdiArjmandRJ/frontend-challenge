@@ -1,0 +1,28 @@
+<div>
+    <!-- begin::filter 1 -->
+    <button [disabled]="!enabled" class="btn mr-1" (click)="toggleHeight('plus')">
+        <svg-icon key="arrow-down"></svg-icon>
+    </button>
+    <!-- end::filter 1 -->
+
+    <!-- begin::filter 2 -->
+    <button [disabled]="!enabled" class="btn mr-1" (click)="toggleHeight('minus')">
+        <svg-icon key="arrow-up-1"></svg-icon>
+    </button>
+    <!-- end::filter 2 -->
+
+    <!-- begin::filter dropdown -->
+    <button [disabled]="!enabled" class="mr-2" (click)="op.toggle($event)">
+        <svg-icon key="filter-edit" width="20px" height="20px"></svg-icon>
+    </button>
+    <p-overlayPanel #op [styleClass]="'filter'">
+        <h6 class="filter__title">تنظیمات پیش فرض</h6>
+        <ul class="filter__scroll">
+            <li class="filter__item" *ngFor="let filter of filters, let last = last" [style.borderBottomWidth.px]="!last ? '1' : '0'">
+                <input class="form-check-input filter__input" type="checkbox" [name]="filter.field" [id]="filter.field" [value]="filter.hide" [checked]="!filter.hide" (click)="select(filter)"/>
+                <label class="form-check-label filter__lable" [for]="filter.field">{{filter.headerName}}</label>
+            </li>
+        </ul>
+    </p-overlayPanel>
+    <!-- end::filter dropdown -->
+</div>

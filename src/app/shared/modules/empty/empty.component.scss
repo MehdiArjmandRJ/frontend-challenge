@@ -1,0 +1,16 @@
+@import "src/theme/settings";
+
+.emptyContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    span {
+        color: $dark-gray-6;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 32px;
+    }
+}

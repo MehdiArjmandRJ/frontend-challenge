@@ -1,0 +1,38 @@
+// @ts-nocheck
+/* eslint-disable */
+import { attachCircleIcon } from './attach-circle';
+import { attachSquareIcon } from './attach-square';
+import { eraserIcon } from './eraser';
+import { firstlineIcon } from './firstline';
+import { languageCircleIcon } from './language-circle';
+import { languageSquareIcon } from './language-square';
+import { link1Icon } from './link-1';
+import { link2Icon } from './link-2';
+import { link21Icon } from './link-21';
+import { linkCircleIcon } from './link-circle';
+import { linkSquareIcon } from './link-square';
+import { linkIcon } from './link';
+import { maximizeIcon } from './maximize';
+import { paperclip2Icon } from './paperclip-2';
+import { paperclipIcon } from './paperclip';
+import { pharagraphspacingIcon } from './pharagraphspacing';
+import { quoteDownCircleIcon } from './quote-down-circle';
+import { quoteDownSquareIcon } from './quote-down-square';
+import { quoteDownIcon } from './quote-down';
+import { quoteUpCircleIcon } from './quote-up-circle';
+import { quoteUpSquareIcon } from './quote-up-square';
+import { quoteUpIcon } from './quote-up';
+import { smallcapsIcon } from './smallcaps';
+import { textBlockIcon } from './text-block';
+import { textBoldIcon } from './text-bold';
+import { textItalicIcon } from './text-italic';
+import { textUnderlineIcon } from './text-underline';
+import { textIcon } from './text';
+import { textalignCenterIcon } from './textalign-center';
+import { textalignJustifycenterIcon } from './textalign-justifycenter';
+import { textalignJustifyleftIcon } from './textalign-justifyleft';
+import { textalignJustifyrightIcon } from './textalign-justifyright';
+import { textalignLeftIcon } from './textalign-left';
+import { textalignRightIcon } from './textalign-right';
+import { translateIcon } from './translate';
+export const typeParagraphCharacterIcons = [attachCircleIcon, attachSquareIcon, eraserIcon, firstlineIcon, languageCircleIcon, languageSquareIcon, link1Icon, link2Icon, link21Icon, linkCircleIcon, linkSquareIcon, linkIcon, maximizeIcon, paperclip2Icon, paperclipIcon, pharagraphspacingIcon, quoteDownCircleIcon, quoteDownSquareIcon, quoteDownIcon, quoteUpCircleIcon, quoteUpSquareIcon, quoteUpIcon, smallcapsIcon, textBlockIcon, textBoldIcon, textItalicIcon, textUnderlineIcon, textIcon, textalignCenterIcon, textalignJustifycenterIcon, textalignJustifyleftIcon, textalignJustifyrightIcon, textalignLeftIcon, textalignRightIcon, translateIcon];

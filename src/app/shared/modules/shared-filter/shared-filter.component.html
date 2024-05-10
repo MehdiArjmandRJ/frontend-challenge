@@ -1,0 +1,23 @@
+<div class="box__filter">
+  <div class="box__right">
+    <div class="box__right-filter">
+      <button class="btn btn__icon btn__blue box__filter-more" [ngClass]="!enabled ? 'disable':''" (click)="toggleFilterForm()" [ngStyle]="{ 'background-color': isFilterHidden ? 'transparent' : '' }">
+        <svg-icon [color]="isFilterHidden ? '#616161' : '#fff'" key="filter-search" width="18px" height="18px" />
+      </button>
+      <button [hidden]="isFilterHidden" class="btn btn__icon box__filter-reset" (click)="resetFilter()">
+        <svg-icon key="refresh-2" width="18px" height="18px" />
+      </button>
+    </div>
+
+    <form [hidden]="isFilterHidden" *ngIf="form" class="box__filters" [formGroup]="form" (ngSubmit)="FilterSubmit()">
+      <div class="box__right">
+        <ng-content />
+      </div>
+      <div class="box__left">
+        <button type="submit" class="btn btn__blue w-100">اعمال فیلتر</button>
+
+        <ng-content select="[button]"/>
+      </div>
+    </form>
+  </div>
+</div>

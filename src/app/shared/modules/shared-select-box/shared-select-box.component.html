@@ -1,0 +1,65 @@
+<div class="main-input" [ngClass]="checkErrors() ? 'have-error' : ''">
+  <div
+    [formGroup]="controlForm"
+    class="main-input__box"
+    *ngIf="controlForm; else useNgModel"
+  >
+    <ng-select
+      bindLabel="label"
+      bindValue="value"
+      [minTermLength]="2"
+      [multiple]="multiSelect"
+      [items]="listItems"
+      [placeholder]="placeHolder"
+      [notFoundText]="notFoundText"
+      [formControlName]="controlName"
+      [searchable]="searchable"
+      [className]="className"
+      (change)="onChangeValue($event)"
+    >
+      <ng-template ng-label-tmp let-item="item">
+        <div class="d-flex ">
+          <span class="d-flex ms-1 me-1" *ngIf="item?.title"> {{ ' ' + item?.title + ' ' }} </span>
+          <span> {{  ' ' + item.label + ' ' }} </span>
+        </div>
+        <img *ngIf="item.avatar" height="15" width="15" [src]="item.avatar" />
+      </ng-template>
+      <ng-template ng-option-tmp let-item="item" let-index="index">
+        <div class="d-flex">
+          <span class="d-flex ms-1 me-1" *ngIf="item?.title"> {{ ' ' + item?.title + ' ' }} </span>
+          <span> {{  ' ' + item.label + ' ' }} </span>
+        </div>
+        <img *ngIf="item.avatar" height="15" width="15" [src]="item.avatar" />
+      </ng-template>
+    </ng-select>
+  </div>
+
+  <ng-template #useNgModel>
+    <div class="main-input__box">
+      <ng-select
+        [multiple]="multiSelect"
+        [minTermLength]="2"
+        [items]="listItems"
+        [placeholder]="placeHolder"
+        [notFoundText]="notFoundText"
+        [(ngModel)]="value"
+        (change)="onChangeValue($event)"
+        [className]="className"
+      >
+      </ng-select>
+    </div>
+  </ng-template>
+
+  <div class="main-input__error-container">
+    <div *ngIf="controlForm; else noForm">
+      <div class="error" *ngIf="checkErrors()">
+        <small>{{ getErrors() }}</small>
+      </div>
+    </div>
+    <ng-template #noForm>
+      <div class="error" *ngIf="errorMessage">
+        <small>{{ errorMessage }}</small>
+      </div>
+    </ng-template>
+  </div>
+</div>

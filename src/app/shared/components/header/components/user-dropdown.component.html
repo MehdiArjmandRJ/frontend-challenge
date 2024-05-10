@@ -1,0 +1,28 @@
+<div class="user-dropdown">
+  <div class="user-dropdown_title d-flex align-items-center justify-content-center">
+    <app-custom-border class="flex-grow-1" [isGradient]="true" fromColor="rgba(72, 124, 185, 1)" toColor="rgba(72, 124, 185, 0)" />
+    <span class="user-dropdown__fullname">{{userFullName}}</span>
+    <app-custom-border class="flex-grow-1" [isGradient]="true" fromColor="rgba(72, 124, 185,0)" toColor="rgba(72, 124, 185, 1)" />
+  </div>
+
+  <div class="user-dropdown__btn-container d-flex align-items-center justify-content-center">
+    <a routerLink="./user-profile" class="btn btn__outline user-dropdown__button">
+      مشاهده پنل کاربری
+    </a>
+  </div>
+
+  <!-- begin::menus -->
+  <div class="user-dropdown__menus d-flex flex-column">
+    <div *ngFor="let item of profileOptions" class="user-dropdown__menu d-flex align-items-center justify-content-start" (click)="item.onClick()">
+      <div class="user-dropdown__menu--icon">
+        <svg-icon [key]="item.icon" width="20px" height="19px" color="#292D32" />
+      </div>
+      <div class="">
+        <span>{{item.title}}</span>
+        <span *ngIf="item.hasStatus" [style.color]="item?.status === 'active' ? '#55C095':'red'" style="margin-right: 21px;">{{item.status === 'active' ? '(فعال)' : '(غیرفعال)'}}</span>
+      </div>
+    </div>
+  </div>
+  <!-- end::menus -->
+
+</div>

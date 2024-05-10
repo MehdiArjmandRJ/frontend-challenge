@@ -1,0 +1,9 @@
+<section>
+  <ag-grid-angular style="width: 100%; height: 100%;" [style.height]="gridService.CPSGridHeight + 'px'"
+    class="ag-theme-alpine" [columnDefs]="gridService.columnDefs" [rowData]="gridService.rowData"
+    [gridOptions]="gridService.gridOptions" [enableRtl]="true" [suppressPaginationPanel]="false"
+    [enableCellTextSelection]="true" [enableCellChangeFlash]="false" [alwaysShowHorizontalScroll]="false"
+    [rowHeight]="41" [animateRows]="false" [pagination]="false"
+    (cellClicked)="onCellClicked($event)" [overlayLoadingTemplate]="gridService.overlayLoadingTemplate"
+    (gridSizeChanged)="onGridSizeChanged($event)" (displayedColumnsChanged)="onDisplayedColumnsChanged($event)"/>
+</section>

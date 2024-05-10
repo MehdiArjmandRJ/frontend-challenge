@@ -1,0 +1,29 @@
+<span *ngIf="order?.orderStatus=== '2' || order?.orderStatus=== '3'" class="d-flex justify-content-center">
+  <button class="ms-1" (click)="editOrder()">
+    <svg-icon color="#616161" key="edit" />
+  </button>
+
+  <button class="me-1" (click)="showCancelOrderOverlay($event)">
+    <svg-icon color="#616161" key="trash" />
+  </button>
+</span>
+
+<!-- begin::Overlay cancel order -->
+<p-overlayPanel #cancel [styleClass]="'cancel-order'" [showCloseIcon]="false">
+  <ng-template pTemplate="content">
+    <div class="cancel-order__container">
+      <div class="cancel-order__content">
+        <p>آیا از حذف سفارش اطمینان دارید؟</p>
+      </div>
+      <div class="cancel-order__actions">
+        <button class="btn btn__red cancel-order__btn" (click)="cancelOrder()" [disabled]="isLoading">
+          بله
+        </button>
+        <button class="btn btn__outline--red cancel-order__btn mr-2" (click)="cancel.hide()">
+          خیر
+        </button>
+      </div>
+    </div>
+  </ng-template>
+</p-overlayPanel>
+<!-- end::Overlay cancel order -->

@@ -1,0 +1,51 @@
+<span class="d-flex justify-content-center">
+  <button class="ms-1" (click)="getOrderDetail(); op.toggle($event)">
+    <svg-icon color="#616161" key="more-circle" />
+  </button>
+  <p-overlayPanel #op>
+    <ng-template pTemplate="content">
+      <div class="orders_table">
+        <div class="outer-wrapper">
+          <table class="table orders_table__content">
+            <thead>
+              <tr>
+                <th scope="col">وضعیت</th>
+                <th scope="col">زمان و تاریخ ثبت درخواست</th>
+                <th scope="col">حجم سفارش</th>
+                <th scope="col">ارزش معامله</th>
+                <th scope="col">قیمت سفارش</th>
+                <th scope="col">حجم معامله شده</th>
+                <th scope="col">حجم مانده</th>
+                <th scope="col">عملیات</th>
+                <th scope="col">منبع مالی</th>
+                <th scope="col">زمان ثبت در هسته</th>
+              </tr>
+            </thead>
+            <ng-container *ngIf="orderDetails?.length > 0">
+              <tbody>
+                <tr *ngFor="let order of orderDetails">
+                  <td>{{ order.orderActionTitle ? order.orderActionTitle : "-" }}</td>
+                  <td>{{ order.userRequestDateTime | jalaliDateTime }}</td>
+                  <td>{{ order.quantity ? order.quantity : "-" }}</td>
+                  <td>{{ +order.quantityChanges ? +order.quantityChanges * +order.price : 0}}</td>
+                  <td>{{ order.price ? (order.price | number) : "-" }}</td>
+                  <td>
+                    {{
+                    +order.quantityChanges ? +order.quantityChanges : 0
+                    }}
+                  </td>
+                  <td>
+                    {{ order.remainingQuantity ? order.remainingQuantity : 0 }}
+                  </td>
+                  <td>{{ getOrderStatus(order) }}</td>
+                  <td>حساب نزد کارگزار</td>
+                  <td>{{ order.submitInCapDateTime | jalaliDateTime }}</td>
+                </tr>
+              </tbody>
+            </ng-container>
+          </table>
+        </div>
+      </div>
+    </ng-template>
+  </p-overlayPanel>
+</span>

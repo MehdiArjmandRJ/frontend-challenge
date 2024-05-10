@@ -1,0 +1,52 @@
+.shared-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  &--danger {
+    border-radius: 4px;
+    background: #e20613;
+    outline: 0;
+    border: 0;
+    min-width: 83px;
+    min-height: 32px;
+    color: #fff;
+    text-align: right;
+    font-feature-settings: "ss02" on;
+    font-family: IRANSansX;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+  }
+
+  &--success {
+    border-radius: 4px;
+    background: #1c846a;
+    outline: 0;
+    border: 0;
+    min-width: 83px;
+    min-height: 32px;
+    color: #fff;
+    text-align: right;
+    font-feature-settings: "ss02" on;
+    font-family: IRANSansX;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+  }
+
+  &--outline {
+    border: 2px solid #1c846a;
+    color: #1c846a ;
+    background-color: #fff;
+    // background: #dae3e147 !important;
+  }
+
+  &--disabled {
+    background: #dae3e147 !important;
+    color: #676161ad !important;
+  }
+}

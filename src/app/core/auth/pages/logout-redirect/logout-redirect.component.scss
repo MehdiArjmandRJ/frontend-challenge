@@ -1,0 +1,25 @@
+
+.logout {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__content {
+        text-align: center;
+    }
+
+    &__picture {
+        width: rem(200px);
+        height: rem(188px);
+    }
+
+    &__logo {
+        width: rem(200px);
+        height: auto;
+    }
+
+    &__subtitle {
+        margin-top: rem(20px);
+    }
+}

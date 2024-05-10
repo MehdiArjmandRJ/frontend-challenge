@@ -1,0 +1,56 @@
+
+body {
+  overflow: hidden;
+}
+
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  font-size: $paragraph-font;
+}
+
+svg-icon {
+  display: flex !important;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+input,
+textarea {
+  border-radius: $border-radius-6;
+  border: 1px solid $light-gray;
+  text-align: right;
+  font-size: rem(10px);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  padding: rem(8px);
+
+  &::placeholder {
+    color: $medium-gray;
+    font-family: "IRANSansX";
+  }
+
+  &:focus-visible {
+    outline: none;
+    border: 1px solid $gray;
+  }
+}

@@ -1,0 +1,22 @@
+<aside class="sidebar" [@sliderState]="sliderToggleState" [ngClass]="toggleSideBar ? 'open' : 'close'">
+
+  <!-- begin::Collapse Button -->
+  <div class="sidebar__hamburger">
+    <div class="icon" (click)="onToggleSideBar()">
+      <svg-icon [key]="toggleSideBar ? 'close-circle' : 'menu'" fontSize="20px" color="#fff"/>
+    </div>
+  </div>
+  <!-- end::Collapse Button -->
+
+  <!-- begin::List of menus -->
+  <div class="sidebar__menues">
+    <div class="item-box" *ngFor="let menu of menus" [routerLink]="menu.route" [routerLinkActive]="'active'" (click)="changeRoute(menu)">
+      <div class="item" [pTooltip]="!toggleSideBar ? menu.title : ''" [tooltipOptions]="tooltipOptions">
+        <span *ngIf="toggleSideBar" class="title">{{menu.title}}</span>
+        <svg-icon [key]="menu.icon" fontSize="20px" color="#fff" />
+      </div>
+    </div>
+  </div>
+  <!-- end::List of menus -->
+
+</aside>

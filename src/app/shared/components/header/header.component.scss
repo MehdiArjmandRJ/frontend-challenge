@@ -1,0 +1,210 @@
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  width: 100vw;
+  direction: ltr;
+  padding-left: 4px;
+  // padding-left: 6px;
+  &__first {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12.5px;
+    padding-right: 12.5px;
+
+    .logo {
+      width: 33.69px;
+      height: 45.99px;
+    }
+
+    .title {
+      display: block;
+      color: #2f2f2f;
+      text-align: right;
+      font-family: IRANSansX;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%;
+
+      @media (max-width: 767px) {
+        display:none;
+      }
+    }
+
+    &___mobile {
+      display:none;
+      align-items: flex-start;
+      justify-content: center;
+      flex: 1;
+
+      .date {
+        color: #2f2f2f;
+        text-align: right;
+        font-family: IRANSansX;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+        display: flex;
+        align-items: center;
+      }
+
+      @media (max-width: 767px) {
+        display:flex;
+      }
+    }
+  }
+
+  &__second {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+    @media (max-width: 767px) {
+      display:none;
+    }
+  }
+
+  .time-box {
+    direction: ltr;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    .period-box {
+      width: 85px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      .period {
+        color: #32bbff;
+        text-align: right;
+        font-family: IRANSansXFaNum;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+      }
+
+      @media (max-width: 767px) {
+        width: 70px;
+
+        .period {
+          font-size: 12px;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .date {
+      color: #2f2f2f;
+      text-align: right;
+      font-family: IRANSansX;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+      display: flex;
+      align-items: center;
+    }
+
+    .time {
+      color: #2f2f2f;
+      width: 55px;
+      text-align: right;
+      font-family: IRANSansX;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+      display: flex;
+      align-items: center;
+
+      @media (max-width: 767px) {
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+
+    .meridian {
+      color: #32bbff;
+      text-align: right;
+      font-family: IRANSansX;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+      display: flex;
+      align-items: center;
+
+      @media (max-width: 767px) {
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+
+    @media (max-width: 767px) {
+      gap: 5px;
+    }
+  }
+
+  &__third {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 38px;
+    padding-left: 24px;
+
+    svg-icon {
+      cursor: pointer;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 4px;
+      cursor: pointer;
+      z-index: 11;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+
+      .sms-box {
+        position: relative;
+
+        .red-dot {
+          position: absolute;
+          top: -1px;
+          right: -2px;
+          width: 8px;
+          height: 8px;
+          border-radius: 100%;
+          background-color: #e20613;
+        }
+      }
+    }
+
+    @media (max-width: 767px) {
+      font-size: 12px;
+      font-weight: 400;
+      gap: 5px;
+      padding-left: 10px;
+
+      .icons {
+        gap: 5px;
+      }
+    }
+  }
+}

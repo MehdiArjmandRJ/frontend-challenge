@@ -1,0 +1,41 @@
+.layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #f9f9f9;
+  flex-direction: column;
+
+  &__header {
+    height: 64px;
+    width: calc(100vw - 63px);
+    background-color: #f9f9f9;
+  }
+
+  app-sidebar {
+    top: 64px;
+    position: absolute;
+    left: 0;
+  }
+
+  &__main {
+    display: flex;
+    width: 100vw;
+    direction: ltr;
+    min-height: 100vh;
+    overflow-y: auto;
+
+    .body {
+      max-height: 100vh;
+      overflow-y: auto;
+      padding: 8px;
+      padding-left: 74px;
+      direction: ltr;
+    }
+  }
+
+
+}
+
+::ng-deep .p-dialog-header-icons {
+  visibility: hidden;
+}

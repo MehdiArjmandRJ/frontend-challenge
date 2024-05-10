@@ -1,0 +1,31 @@
+.checkbox {
+  width: 100px;
+  height: auto !important;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    color: #616161;
+    text-align: right;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    border-bottom: 1px solid #f8f8f8;
+    padding: 8px 0 8px 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    cursor: pointer;
+  }
+
+  &__label {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+}

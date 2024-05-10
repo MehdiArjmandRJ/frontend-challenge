@@ -1,0 +1,35 @@
+.dir-rtl {
+  direction: rtl;
+}
+
+.dir-ltr {
+  direction: ltr;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.ms-1 {
+  margin-right: rem(4px);
+}
+
+.ms-2 {
+  margin-right: rem(8px);
+}
+
+.me-1 {
+  margin-left: rem(4px);
+}
+
+.me-2 {
+  margin-left: rem(8px);
+}
+
+.border-radius-5 {
+  border-radius: rem(5px) !important;
+}

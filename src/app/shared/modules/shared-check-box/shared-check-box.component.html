@@ -1,0 +1,23 @@
+<div class="checkbox" [classList]="classList">
+  <div class="checkbox__content" *ngFor="let checkBox of checkBoxList; let i = index, let last = last" [style.borderBottomWidth.px]="!last ? '1' : '0'">
+    <div class="checkbox__item" (click)="onChange(checkBox.active, i)">
+      <input class="checkbox__input" type="checkBox" [name]="checkBox.name" [value]="checkBox.value" [checked]="checkBox.active" />
+      <label class="checkbox__label" [for]="checkBox.name">{{
+        checkBox.label
+        }}</label>
+    </div>
+  </div>
+</div>
+
+<div class="main-input__error-container">
+  <div *ngIf="controlForm; else noForm">
+    <div class="error" *ngIf="checkErrors()">
+      <small>{{ getErrors() }}</small>
+    </div>
+  </div>
+  <ng-template #noForm>
+    <div class="error" *ngIf="errorMessage">
+      <small>{{ errorMessage }}</small>
+    </div>
+  </ng-template>
+</div>

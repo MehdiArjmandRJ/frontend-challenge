@@ -1,22 +1,27 @@
-# Tetromize Coding challenge
+# Arjmand
 
-Write a angular application in typescript with the follow requirements:
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
 
-Create a web application that allows users to search for recipes and save them to a personal recipe collection. The application should include the following features:
+## Development server
 
-- Use static JSON to retrieve a list of recipes
-- Display the list item of recipes in card (contain name, recipes, images).
-- Implement a search functionality that allows users to search for recipes by name, ingredients (Use reactive forms).
-- Use a custom directive to highlight the recipe card when the user hovers over it.
-- Allow users to save recipes to a personal recipe collection by clicking a "Save" button on each recipe card.
-- Implement a "My Recipes" page that displays the user's saved recipes in a list.
-- Allow users to remove recipes from their personal recipe collection by clicking a "Remove" button on each recipe in the "My Recipes" page.
-- Implement loading and error states while retrieving the list of recipes from the API.
-- In addition to the above requirements, the application should be designed with good coding practices in mind, such as separation of concerns, maintainability, and scalability.
-- For search you cannot use button and you should update list by every change in inputs.
-- In header you should show how many recipes are saved.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## What we will look at
+## Code scaffolding
 
-- We want to see how you write and manage code (name structure of the folders, usage of interfaces, naming conventions)
-- BONUS: unit tests
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

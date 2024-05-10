@@ -1,0 +1,49 @@
+
+//colors
+$primary : #487CB9;
+$blue : #487CB9;
+$blue-light: #EDF8FD;
+$very-blue-light: #F6FBFD;
+$dark-green: #1C846A;
+$light-green: #55C095;
+$very-light-green: #F2F8F6;
+$white: #FFF;
+$red: #E20613;
+$yellow: #DA9835;
+$very-ligh-yellow: #FBF7EB;
+$very-ligh-red: #FFE2E4;
+$black: #000;
+$black-2: #2F2F2F;
+$dark-gray: #616161;
+$medium-gray: #AEAEAE;
+$gray: #DDD;
+$very-light-gray: #E4E4E4;
+$light-gray: #ECECEC;
+$back-ground: #F9F9F9;
+
+$dark-gray-1: #292d32;
+$dark-gray-2: #404040;
+$dark-gray-3: #5b5b5b;
+$dark-gray-4: #727272;
+$dark-gray-5: #8a8a8a;
+$dark-gray-6: #a1a1a1;
+
+//Border
+$border-radius-2: rem(2px);
+$border-radius-4: rem(4px);
+$border-radius-6: rem(6px);
+$border-radius-8: rem(8px);
+$border-radius-10: rem(10px);
+
+//Containers
+$container: rem(0 10px);
+
+//Font
+$paragraph-font: rem(12px);
+$font-family-base: "IRANSansX";
+
+* {
+  font-family: $font-family-base;
+  margin: 0;
+  padding: 0;
+}

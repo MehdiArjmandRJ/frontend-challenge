@@ -1,0 +1,48 @@
+<div *ngIf="styleObj" class="w-100 h-100" style="overflow: hidden">
+  <ul
+    #tabsUl
+    class="tabs {{ tabsHeadCssClass }}"
+    [ngStyle]="{
+      width: width ? width : null,
+      height: height ? height : null,
+      'font-size': fontSize ? fontSize : '12px',
+      'font-weight': fontWeight ? fontWeight : '400',
+      color: textColor ? textColor : 'black',
+      'background-color': tabsBgColor,
+      'border-radius': tabsBgBorderRadius,
+      'justify-content': justifyContent ? justifyContent : 'flex-start',
+      margin: margin
+    }"
+  >
+    <li
+      #tabItem
+      appTabActivation
+      (click)="selectTab(tab)"
+      [class.active]="tab.active"
+      (onClickTab)="onTabClick($event, index)"
+      *ngFor="let tab of tabs; let index = index"
+      [ngClass]="{ unClickable: tab.isDisabled }"
+      [ngStyle]="{
+
+        'min-width': tabMinWidth ? tabMinWidth : '85px',
+
+      }"
+    >
+      <img
+        alt="Tab-Icon"
+        class="d-flex"
+        *ngIf="tab.iconPath"
+        src="{{ tab.iconPath }}"
+      />
+      <a>{{ tab.title }}</a>
+      <div *ngIf="tab.badgeValue" class="badge" [class.active]="tab.active">
+        <p style="color: #212121">{{ tab.badgeValue }}</p>
+      </div>
+    </li>
+    <div class="customBorder" [ngStyle]="styleObj"></div>
+  </ul>
+  <div class="w-100 mt-2" [style.height]="height ? height : '100%'">
+    <ng-content></ng-content>
+  </div>
+</div>
+<div (window:resize)="onResize($event)"></div>

@@ -1,0 +1,59 @@
+<div class="main-input">
+  <div
+    [formGroup]="controlForm"
+    class="main-input__box"
+    *ngIf="controlForm; else useNgModel"
+  >
+    <ng-select
+      [compareWith]="compareFn"
+      [minTermLength]="2"
+      [multiple]="multiSelect"
+      [items]="autoComplete$ | async"
+      [loading]="autoCompleteLoading"
+      [typeahead]="autoCompleteInput$"
+      [placeholder]="placeHolder"
+      [notFoundText]="notFoundText"
+      [formControlName]="controlName"
+      [searchable]="searchable"
+      [loadingText]="loadingText"
+      [typeToSearchText]="typeToSearchText"
+      [class]="theme"
+      (change)="onChangeValue($event)"
+    >
+    </ng-select>
+  </div>
+
+  <ng-template #useNgModel>
+    <div class="main-input__box">
+      <ng-select
+        [compareWith]="compareFn"
+        [multiple]="multiSelect"
+        [minTermLength]="2"
+        [items]="autoComplete$ | async"
+        [loading]="autoCompleteLoading"
+        [typeahead]="autoCompleteInput$"
+        [placeholder]="placeHolder"
+        [notFoundText]="notFoundText"
+        [(ngModel)]="value"
+        [loadingText]="loadingText"
+        [typeToSearchText]="typeToSearchText"
+        [class]="theme"
+        (change)="onChangeValue($event)"
+        (click)="onSelectClick($event)"
+      >
+      </ng-select>
+    </div>
+  </ng-template>
+  <div class="main-input__error-container">
+    <div *ngIf="controlForm; else noForm">
+      <div class="error" *ngIf="checkErrors()">
+        <small>{{ getErrors() }}</small>
+      </div>
+    </div>
+    <ng-template #noForm>
+      <div class="error" *ngIf="errorMessage">
+        <small>{{ errorMessage }}</small>
+      </div>
+    </ng-template>
+  </div>
+</div>

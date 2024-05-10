@@ -1,0 +1,25 @@
+<div class="main-radio">
+  <div *ngFor="let radio of radioList; let i = index">
+    <input
+      type="radio"
+      [name]="radio.name"
+      [value]="radio.value"
+      [checked]="radio.active"
+      (change)="onChange(radio.value, i)"
+    />
+    <label [for]="radio.name">{{ radio.label }}</label>
+  </div>
+
+  <div class="main-input__error-container">
+    <div *ngIf="controlForm; else noForm">
+      <div class="error" *ngIf="checkErrors()">
+        <small>{{ getErrors() }}</small>
+      </div>
+    </div>
+    <ng-template #noForm>
+      <div class="error" *ngIf="errorMessage">
+        <small>{{ errorMessage }}</small>
+      </div>
+    </ng-template>
+  </div>
+</div>

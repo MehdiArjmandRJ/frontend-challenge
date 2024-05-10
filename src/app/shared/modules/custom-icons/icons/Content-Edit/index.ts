@@ -1,0 +1,37 @@
+// @ts-nocheck
+/* eslint-disable */
+import { archiveBookIcon } from './archive-book';
+import { billIcon } from './bill';
+import { clipboardCloseIcon } from './clipboard-close';
+import { clipboardExportIcon } from './clipboard-export';
+import { clipboardImportIcon } from './clipboard-import';
+import { clipboardTextIcon } from './clipboard-text';
+import { clipboardTickIcon } from './clipboard-tick';
+import { copyrightIcon } from './copyright';
+import { creativeCommonsIcon } from './creative-commons';
+import { documentCloudIcon } from './document-cloud';
+import { documentCopyIcon } from './document-copy';
+import { documentDownloadIcon } from './document-download';
+import { documentFavoriteIcon } from './document-favorite';
+import { documentFilterIcon } from './document-filter';
+import { documentForwardIcon } from './document-forward';
+import { documentLikeIcon } from './document-like';
+import { documentPreviousIcon } from './document-previous';
+import { documentSketchIcon } from './document-sketch';
+import { documentText1Icon } from './document-text-1';
+import { documentTextIcon } from './document-text';
+import { documentUploadIcon } from './document-upload';
+import { documentIcon } from './document';
+import { edit2Icon } from './edit-2';
+import { editIcon } from './edit';
+import { menuBoardIcon } from './menu-board';
+import { note1Icon } from './note-1';
+import { noteAddIcon } from './note-add';
+import { noteFavoriteIcon } from './note-favorite';
+import { noteRemoveIcon } from './note-remove';
+import { noteTextIcon } from './note-text';
+import { noteIcon } from './note';
+import { stickynoteIcon } from './stickynote';
+import { taskSquareIcon } from './task-square';
+import { taskIcon } from './task';
+export const contentEditIcons = [archiveBookIcon, billIcon, clipboardCloseIcon, clipboardExportIcon, clipboardImportIcon, clipboardTextIcon, clipboardTickIcon, copyrightIcon, creativeCommonsIcon, documentCloudIcon, documentCopyIcon, documentDownloadIcon, documentFavoriteIcon, documentFilterIcon, documentForwardIcon, documentLikeIcon, documentPreviousIcon, documentSketchIcon, documentText1Icon, documentTextIcon, documentUploadIcon, documentIcon, edit2Icon, editIcon, menuBoardIcon, note1Icon, noteAddIcon, noteFavoriteIcon, noteRemoveIcon, noteTextIcon, noteIcon, stickynoteIcon, taskSquareIcon, taskIcon];

@@ -1,0 +1,30 @@
+// @ts-nocheck
+/* eslint-disable */
+import { arrowSquareIcon } from './arrow-square';
+import { arrowIcon } from './arrow';
+import { directDownIcon } from './direct-down';
+import { directLeftIcon } from './direct-left';
+import { directRightIcon } from './direct-right';
+import { directUpIcon } from './direct-up';
+import { discoverIcon } from './discover';
+import { globalEditIcon } from './global-edit';
+import { globalRefreshIcon } from './global-refresh';
+import { globalSearchIcon } from './global-search';
+import { globalIcon } from './global';
+import { gpsSlashIcon } from './gps-slash';
+import { gpsIcon } from './gps';
+import { locationAddIcon } from './location-add';
+import { locationCrossIcon } from './location-cross';
+import { locationMinusIcon } from './location-minus';
+import { locationSlashIcon } from './location-slash';
+import { locationTickIcon } from './location-tick';
+import { locationIcon } from './location';
+import { map1Icon } from './map-1';
+import { mapIcon } from './map';
+import { pictureFrameIcon } from './picture-frame';
+import { radar2Icon } from './radar-2';
+import { radarIcon } from './radar';
+import { routeSquareIcon } from './route-square';
+import { routing2Icon } from './routing-2';
+import { routingIcon } from './routing';
+export const locationIcons = [arrowSquareIcon, arrowIcon, directDownIcon, directLeftIcon, directRightIcon, directUpIcon, discoverIcon, globalEditIcon, globalRefreshIcon, globalSearchIcon, globalIcon, gpsSlashIcon, gpsIcon, locationAddIcon, locationCrossIcon, locationMinusIcon, locationSlashIcon, locationTickIcon, locationIcon, map1Icon, mapIcon, pictureFrameIcon, radar2Icon, radarIcon, routeSquareIcon, routing2Icon, routingIcon];

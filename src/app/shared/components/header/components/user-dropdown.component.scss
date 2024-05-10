@@ -1,0 +1,60 @@
+@import 'sass-rem';
+@import './src/theme/_settings.scss';
+
+.user-dropdown {
+
+  .p-overlaypanel-content {
+    padding: rem(23px 28px);
+  }
+
+  &__fullname {
+    color: $dark-gray;
+    font-size: rem(14px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    padding: rem(0 8px);
+  }
+
+  &__btn-container {
+    margin-top: rem(17px);
+  }
+
+  &__button {
+    color: $blue;
+    text-align: center;
+    font-size: rem(12px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    cursor: pointer;
+  }
+
+  &__menus {
+    margin-top: rem(21px);
+  }
+
+  &__menu {
+    color: $dark-gray;
+    font-size: rem(10px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    cursor: pointer;
+    border-bottom: 1.5px solid #f8f8f8;
+    padding: rem(12px 0 12px 0);
+
+    &:last-child {
+      padding-bottom: 0;
+      border: none;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &--icon {
+      margin-left: rem(30px);
+    }
+  }
+}
