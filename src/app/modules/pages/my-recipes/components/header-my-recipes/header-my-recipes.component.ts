@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RxFormGroup } from '@rxweb/reactive-form-validators';
 
 @Component({
@@ -6,17 +6,13 @@ import { RxFormGroup } from '@rxweb/reactive-form-validators';
   templateUrl: './header-my-recipes.component.html',
   styleUrls: ['./header-my-recipes.component.scss']
 })
-export class HeaderMyRecipesComponent implements OnInit {
+export class HeaderMyRecipesComponent {
   @Input() count: number;
   @Input() form: RxFormGroup;
   @Input() isPending: boolean;
 
   @Output() insertRecipe = new EventEmitter;
   constructor() { }
-
-  ngOnInit() {
-    console.log(this.form);
-  }
 
   insert() {
     this.insertRecipe.emit();

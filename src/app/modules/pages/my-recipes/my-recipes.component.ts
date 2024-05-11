@@ -64,9 +64,9 @@ export class MyRecipesComponent implements OnInit, OnDestroy, MyRecipesPageInter
 
   removeRow(index: number) {
     let currentData = this.getRecipes().getValue();
-    console.log(index);
+    currentData.splice(index, 1)
     let newData: GetRecipesModel = {
-      data: currentData.splice(index, 1),
+      data: [...currentData],
       count: this.getRecipesCount() - 1 < 0 ? 0 : this.getRecipesCount() - 1
     }
     this.myRecipesService.removeMyRecipesData(newData);

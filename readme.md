@@ -1,3 +1,17 @@
+# My Description For Task
+
+    Hello Good day
+    The test task is almost done
+    I need to explain some issues.
+    I used HttpContext for loading management, but because I didn't have any api, I just wrote the code, but it was not used in this project.
+    Regarding the recipes and my recipes pages, it was my mistake to separate these two pages and because I used lazy loading, the table value is reset.But I implemented the actions on these pages.
+    In the sample project, I also put codes separate from the task that I usually use.
+
+    Like autocomplete, because it was a static task, I could not use these items.
+    I also handled the loading of the buttons in the component, as you can see in the review.
+    I wrote the error handling code, but because the task is static, I did not use it.
+    I hope my effort is close to your standards.
+
 # Arjmand
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
