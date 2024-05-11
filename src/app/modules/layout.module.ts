@@ -8,7 +8,6 @@ import { IconsModule } from '../shared/modules/custom-icons/icons.module';
 //Components
 import { HeaderComponent, SidebarComponent } from '../shared/components';
 import { LayoutComponent } from './layout.component';
-import { HomeComponent } from './pages/home/home.component';
 
 //Services
 
@@ -26,7 +25,7 @@ import { LayoutRoutingModule } from './layout-routing.module';
     IconsModule,
     TooltipModule
   ],
-  declarations: [LayoutComponent, HomeComponent, HeaderComponent, SidebarComponent],
+  declarations: [LayoutComponent, HeaderComponent, SidebarComponent],
   providers: [
   ],
 })

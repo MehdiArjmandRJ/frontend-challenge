@@ -1,0 +1,12 @@
+<div class="header-home">
+  <div class="header-home__left">
+    <h2> Recipes count ({{count}}) </h2>
+    <form [formGroup]="form">
+      <app-shared-input *ngIf="form" controlName="name" [controlForm]="form"
+        placeHolder="search name ..."></app-shared-input>
+    </form>
+  </div>
+  <div class="header-home__right">
+    <app-shared-button title="Insert" [isPending]="isPending" (click)="insert()" />
+  </div>
+</div>

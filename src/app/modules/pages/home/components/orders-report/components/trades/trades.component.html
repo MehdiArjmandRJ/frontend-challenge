@@ -1,9 +1,0 @@
-<section>
-  <ag-grid-angular style="width: 100%; height: 300px;" class="ag-theme-alpine"
-    [columnDefs]="gridService.tradesColumnDefs" [rowData]="trades" [gridOptions]="gridService.tradesGridOptions"
-    [enableRtl]="true" [suppressPaginationPanel]="false" [overlayLoadingTemplate]="overlayLoadingTemplate"
-    [enableCellTextSelection]="true" [enableCellChangeFlash]="false" [alwaysShowHorizontalScroll]="false"
-    [rowHeight]="41" [animateRows]="false" [pagination]="false" (firstDataRendered)="onFirstDataRendered($event)"
-    (gridSizeChanged)="onGridSizeChanged($event)" 
-    (displayedColumnsChanged)="onDisplayedColumnsChanged($event)"/>
-</section>

@@ -1,0 +1,11 @@
+<div class="header-my-recipes">
+  <div class="header-my-recipes__left">
+    <h2> Recipes count ({{count}}) </h2>
+    <form [formGroup]="form">
+      <app-shared-input *ngIf="form" controlName="name" [controlForm]="form"
+        placeHolder="search name ..."></app-shared-input>
+    </form>
+  </div>
+  <div class="header-my-recipes__right">
+  </div>
+</div>

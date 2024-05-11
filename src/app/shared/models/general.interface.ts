@@ -24,9 +24,9 @@ export interface CheckBoxInterface {
     avatarPrev: string | ArrayBuffer;
   }
   
-  export interface ResponseRepositoryInterface {
+  export interface ResponseRepositoryInterface<T> {
     status: string;
-    statusCode: number;
-    data: any;
+    statusCode?: number;
+    data: T;
   }
   
