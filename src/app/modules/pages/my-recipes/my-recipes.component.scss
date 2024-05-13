@@ -1,0 +1,21 @@
+
+.middle-conatiner {
+    margin: rem(0 8px);
+
+    > .col,
+    > [class*="col-"] {
+        max-height: rem(315px);
+        min-height: rem(315px);
+        overflow: hidden;
+        padding-right: rem(2px);
+        padding-left: rem(2px);
+        border-radius: 8px;
+        //margin-bottom:rem(4px);
+    }
+}
+
+.white-box {
+    background: #fff;
+    height: 100%;
+    width: 100%;
+}

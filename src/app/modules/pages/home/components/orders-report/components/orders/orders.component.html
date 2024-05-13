@@ -1,9 +1,0 @@
-<section>
-  <ag-grid-angular style="width: 100%; height: 300px;" class="ag-theme-alpine"
-    [columnDefs]="gridService.ordersColumnDefs" [rowData]="orders" [gridOptions]="gridService.ordersGridOptions"
-    [enableRtl]="true" [suppressPaginationPanel]="false" [enableCellTextSelection]="true"
-    [overlayLoadingTemplate]="overlayLoadingTemplate" [enableCellChangeFlash]="false"
-    [alwaysShowHorizontalScroll]="false" [rowHeight]="41" [animateRows]="false" [pagination]="false"
-    [getRowId]="getRowId" (gridSizeChanged)="onGridSizeChanged($event)"
-    (displayedColumnsChanged)="onDisplayedColumnsChanged($event)" />
-</section>

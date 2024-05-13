@@ -1,0 +1,17 @@
+<p-dialog header="Insert new recipe" [closable]="true" [modal]="true" [(visible)]="visibleInsert"
+  [style]="{ width: '25rem' }">
+  <form class="insert-form" *ngIf="form" [formGroup]="form" (ngSubmit)="submitForm()">
+
+    <div class="insert-form__body">
+      <app-shared-input controlName="name" [controlForm]="form" placeHolder="Name"></app-shared-input>
+
+      <app-shared-input controlName="image" [controlForm]="form" placeHolder="File address"></app-shared-input>
+
+      <app-shared-input controlName="recipe" [controlForm]="form" placeHolder="Image address"></app-shared-input>
+    </div>
+    <div class="insert-form__footer">
+      <app-shared-button title="Cancel" [isPending]="isPending" (click)="cancel()" />
+      <app-shared-button title="Save" [isPending]="isPending" type="submit" />
+    </div>
+  </form>
+</p-dialog>

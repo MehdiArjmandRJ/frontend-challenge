@@ -12,6 +12,11 @@ const routes: Routes = [
         data: {},
         loadChildren: () => import('./pages/home/home.module').then(module => module.HomeModule)
       },
+      {
+        path: 'my-recipes',
+        data: {},
+        loadChildren: () => import('./pages/my-recipes/my-recipes.module').then(module => module.MyRecipesModule)
+      },
     ]
   },
   {

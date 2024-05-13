@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { ConfirmationService, MessageService } from 'primeng/api';
 
 //Routing
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -20,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
   providers: [
     MessageService,
     ConfirmationService,
+    HttpClientModule,
   ],
   imports: [CoreModule, BrowserModule, BrowserAnimationsModule, AppRoutingModule, ConfirmDialogModule],
   bootstrap: [AppComponent],

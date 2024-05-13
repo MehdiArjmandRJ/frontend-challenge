@@ -23,6 +23,12 @@ export class SidebarComponent implements OnInit {
       active: false,
       route: '/panel/home'
     },
+    {
+      title: 'My Recipes',
+      icon: 'document-favorite',
+      active: false,
+      route: '/panel/my-recipes'
+    },
   ];
   tooltipOptions: TooltipOptions = {
     showDelay: 400,

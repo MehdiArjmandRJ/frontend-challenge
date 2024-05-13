@@ -22,25 +22,25 @@ export class GlobalErrorHandler {
     if (error.status === 400) {
       if (typeof error.error === 'string' && JSON.parse(error.error)) {
         err = JSON.parse(error.error);
-        errorMessage = this.findErrorDisplay(err?.invalidParams[0].reasons[0]);
+        errorMessage = this.findErrorDisplay();
       } else if (error.error.invalidParams) {
         err = error.error;
-        errorMessage = this.findErrorDisplay(err?.invalidParams[0].reasons[0]);
+        errorMessage = this.findErrorDisplay();
       } else if (error.error.detail) {
         err = error.error;
-        errorMessage = this.findErrorDisplay(err.detail);
+        errorMessage = this.findErrorDisplay();
       }
     } else if (error.status === 403) {
-      errorMessage = 'دسترسی لازم وجود ندارد.';
+      errorMessage = 'You have note permission';
     } else {
-      errorMessage = 'خطایی رخ داده است.';
+      errorMessage = 'Error';
     }
 
     // this.notificationService.error(errorMessage, null, { comeFrom: MessageChannel.Api });
   }
 
-  private findErrorDisplay(error: string) {
+  private findErrorDisplay() {
     // const findTranslate = this.errorTranslator.find(e => e.error === error)?.display;
-    return 'خطایی رخ داده است.';
+    return 'Error';
   }
 }
