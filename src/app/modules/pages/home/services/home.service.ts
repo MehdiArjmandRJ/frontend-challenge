@@ -1,42 +1,43 @@
+//Modules
+import { Observable, Subscription } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { ResponseRepositoryInterface } from '@app/shared/models/general.interface';
-import { BehaviorSubject, Subscription } from 'rxjs';
-import { GetRecipesModel, RecipesResponseInterface } from '../models/home.interface';
-import { HomeRepositoryService } from '../repository/home-repository.service';
+
+//Models
+import { GetRecipesModel } from '../models/home.interface';
+
+//Store
+import { Select, Store } from '@ngxs/store';
+import { DataActions } from '@app/core/store/data.action';
+import { DataSelectors } from '@app/core/store/data.selector';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root',
 })
 export class HomeService {
-    private count: number;
-    private subscriptions: Subscription = new Subscription();
-    private recipesData: BehaviorSubject<RecipesResponseInterface[]> = new BehaviorSubject([]);
-    constructor(private homeRepositoryService: HomeRepositoryService) {
-    }
+  private count: number;
+  private subscriptions: Subscription = new Subscription();
 
-    public initialRecipesData(): void {
-        this.homeRepositoryService.getRecipesData().subscribe((response: ResponseRepositoryInterface<RecipesResponseInterface[]>) => {
-            //do any change on data
-            this.count = response.data.length;
-            this.recipesData.next(response.data);
-        });
-    }
+  @Select(DataSelectors.getRecipesItemNames) private getRecipesItemNames$;
+  @Select(DataSelectors.getCountRecipesItem) private getCountRecipesItem$;
 
-    public getRecipesData(): GetRecipesModel {
-        // take response and push on state or your custom state
-        return { "data": this.recipesData, "count": this.count };
-    }
-
-    public insertRecipesData(data: any): void {
-        this.count = data.count;
-        this.recipesData.next(data.data);
-    }
+  constructor(private store: Store) {}
 
 
+  public getRecipesData(): GetRecipesModel {
+    // take response and push on state or your custom state
+    return {
+      data: this.getRecipesItemNames$,
+      count: this.getCountRecipesItem$,
+    };
+  }
 
-    public unsubscribe(): void {
-        // unsubscribe all observable in home component;
-        this.subscriptions.unsubscribe()
-    }
 
+  public insertRecipesData(data: any): void {
+    this.store.dispatch(new DataActions.Insert(data));
+  }
+
+  public unsubscribe(): void {
+    // unsubscribe all observable in home component if u need;
+    this.subscriptions.unsubscribe();
+  }
 }

@@ -1,4 +1,4 @@
-import { BehaviorSubject } from "rxjs";
+import { Observable } from "rxjs";
 
 export interface RecipesResponseInterface {
   name: string;
@@ -15,6 +15,6 @@ export interface ColsData {
 }
 
 export interface GetRecipesModel {
-  data: BehaviorSubject<RecipesResponseInterface[]> | RecipesResponseInterface[];
+  data: Observable<RecipesResponseInterface[]> | RecipesResponseInterface[];
   count: number;
 }

@@ -1,6 +1,6 @@
 <main class="home">
   <section class="middle-conatiner row justify-content-between">
-    <header-my-recipes [form]="searchRecipesForm" [isPending]="isPending" [count]="getRecipesCount()" />
+    <header-my-recipes [form]="searchRecipesForm" [isPending]="isPending" [count]="getRecipesCount() | async" />
     <app-shared-table [cols]="colsData" (onRemove)="removeRow($event)"
       [dataList]="getRecipes() | async  | filterByName: searchRecipesForm.value.name" />
   </section>

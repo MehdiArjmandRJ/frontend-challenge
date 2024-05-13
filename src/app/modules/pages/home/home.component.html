@@ -1,11 +1,24 @@
 <main class="home">
   <section class="middle-conatiner row justify-content-between">
-    <header-home [form]="searchRecipesForm" [isPending]="isPending" [count]="getRecipesCount()"
-      (insertRecipe)="insertRecipe()" />
-    <app-shared-table [cols]="colsData"
-      [dataList]="getRecipes() | async  | filterByName: searchRecipesForm.value.name" />
+    <header-home
+      [form]="searchRecipesForm"
+      [isPending]="isPending"
+      [count]="getRecipesCount() | async"
+      (insertRecipe)="insertRecipe()"
+    />
+    <app-shared-table
+      [cols]="colsData"
+      [dataList]="
+        getRecipes() | async | filterByName : searchRecipesForm.value.name
+      "
+    />
   </section>
 </main>
 
-<app-insert-home [form]="insertRecipeForm" [isPending]="isPending" [visibleInsert]="visibleInsert"
-  (onSubmitInsert)="submitInsert()" (onCancelInsert)="visibleInsert = false" />
+<app-insert-home
+  [form]="insertRecipeForm"
+  [isPending]="isPending"
+  [visibleInsert]="visibleInsert"
+  (onSubmitInsert)="submitInsert()"
+  (onCancelInsert)="visibleInsert = false"
+/>

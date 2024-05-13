@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "arjmand:build:production"
+              "buildTarget": "arjmand:build:production"
             },
             "development": {
-              "browserTarget": "arjmand:build:development"
+              "buildTarget": "arjmand:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "arjmand:build"
+            "buildTarget": "arjmand:build"
           }
         },
         "test": {

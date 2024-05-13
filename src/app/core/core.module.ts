@@ -1,22 +1,22 @@
+import { tap } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { tap } from 'rxjs';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 //Modules
+import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
-import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 
 //Services
 import { AppInitService } from './config/app-init.service';
-import { CustomAuthInterceptor } from './interceptor/custom-auth-interceptor';
+import { HttpCancelService } from './services/httpcancel.service';
 import { GlobalErrorHandler } from './services/globalErrorHandler';
+import { CustomAuthInterceptor } from './interceptor/custom-auth-interceptor';
 
 //Stores
-import { HttpCancelService } from './services/httpcancel.service';
-
+import { DataState } from './store/data.state';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 
 export function initializeApp(appInitService: AppInitService) {
   return () => {
@@ -30,7 +30,7 @@ export function initializeApp(appInitService: AppInitService) {
             }
             return false;
           },
-          error: () => false
+          error: () => false,
         })
       )
       .subscribe();
@@ -44,7 +44,7 @@ export function initializeApp(appInitService: AppInitService) {
     BrowserModule,
     HttpClientModule,
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    // NgxsModule.forRoot([WatchlistState, InsSelectedState]),
+    NgxsModule.forRoot([DataState]),
     NgxsStoragePluginModule.forRoot({ key: 'StorageState' }),
   ],
   providers: [
@@ -53,15 +53,15 @@ export function initializeApp(appInitService: AppInitService) {
       provide: APP_INITIALIZER,
       useFactory: initializeApp,
       deps: [AppInitService],
-      multi: true
+      multi: true,
     },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: CustomAuthInterceptor,
-      multi: true
+      multi: true,
     },
     GlobalErrorHandler,
-    HttpCancelService
-  ]
+    HttpCancelService,
+  ],
 })
-export class CoreModule { }
+export class CoreModule {}

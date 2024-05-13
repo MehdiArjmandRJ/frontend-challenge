@@ -13,7 +13,7 @@
                 <span class="downloadLink" *ngIf="col.type === 'file'"
                     (click)="downloadFile(rowData[col.field])">download File</span>
                 <span *ngIf="col.type === 'text'">{{ rowData[col.field] }}</span>
-                <div *ngIf="col.type === 'tools'" class="remove-btn" (click)="remove(rowIndex)">Remove</div>
+                <div *ngIf="col.type === 'tools'" class="remove-btn" (click)="remove(rowData,rowIndex)">Remove</div>
             </td>
         </tr>
     </ng-template>

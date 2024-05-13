@@ -1,14 +1,21 @@
 //Packages
+import { Store } from '@ngxs/store';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { UtilitiesService } from '@app/shared/utils';
 import { RxFormBuilder, RxFormGroup } from '@rxweb/reactive-form-validators';
-import { BehaviorSubject } from 'rxjs';
 
 //Interfaces or Models
 import { HomePageInterface } from './interface';
-import { ColsData, GetRecipesModel, InsertRecipesModel, RecipesResponseInterface, SearchRecipesModel } from './models';
+import {
+  ColsData,
+  GetRecipesModel,
+  InsertRecipesModel,
+  RecipesResponseInterface,
+  SearchRecipesModel,
+} from './models';
 
 //Services
+import { UtilitiesService } from '@app/shared/utils';
 import { HomeService } from './services/home.service';
 
 @Component({
@@ -24,21 +31,24 @@ export class HomeComponent implements OnInit, OnDestroy, HomePageInterface {
   searchRecipesForm: RxFormGroup;
   recipesData: RecipesResponseInterface[];
 
-  constructor(private homeService: HomeService, private rxFormBuilder: RxFormBuilder, private utilitiesService: UtilitiesService) { }
+  constructor(
+    private homeService: HomeService,
+    private rxFormBuilder: RxFormBuilder,
+    private utilitiesService: UtilitiesService
+  ) {}
 
   ngOnInit(): void {
-    this.homeService.initialRecipesData();
     this.initialSearchForm();
     this.getRecipes();
     this.setTableHeaderValue();
     this.searchInList();
   }
 
-  getRecipes(): BehaviorSubject<RecipesResponseInterface[]> | any {
+  getRecipes(): Observable<RecipesResponseInterface[]> | any {
     return this.homeService.getRecipesData().data;
   }
 
-  getRecipesCount(): number {
+  getRecipesCount(): Observable<number> | any {
     return this.homeService.getRecipesData().count;
   }
 
@@ -47,19 +57,22 @@ export class HomeComponent implements OnInit, OnDestroy, HomePageInterface {
       { field: 'name', header: 'Name', type: 'text' },
       { field: 'recipe', header: 'Recipes', type: 'file' },
       { field: 'image', header: 'Image', type: 'img' },
-    ]
-  };
+    ];
+  }
 
   initialSearchForm(): void {
     let newForm: SearchRecipesModel = new SearchRecipesModel();
-    this.searchRecipesForm = this.rxFormBuilder.formGroup(newForm) as RxFormGroup;
+    this.searchRecipesForm = this.rxFormBuilder.formGroup(
+      newForm
+    ) as RxFormGroup;
   }
 
   initialInsertForm(): void {
     let newForm: InsertRecipesModel = new InsertRecipesModel();
-    this.insertRecipeForm = this.rxFormBuilder.formGroup(newForm) as RxFormGroup;
+    this.insertRecipeForm = this.rxFormBuilder.formGroup(
+      newForm
+    ) as RxFormGroup;
   }
-
 
   searchInList(): void {
     //i try to create a autocomplete for search with delay with rxjs but for this search i chose this way (use pipe) because we have static data;
@@ -77,21 +90,17 @@ export class HomeComponent implements OnInit, OnDestroy, HomePageInterface {
       this.visibleInsert = false;
       //set 3000 ms delay for Submit Insert
       setTimeout(() => {
-        const currentData = this.getRecipes().getValue();
-        let newData: GetRecipesModel = {
-          data: [...currentData, this.insertRecipeForm.value],
-          count: this.getRecipesCount() + 1
-        }
-        this.homeService.insertRecipesData(newData);
+        this.homeService.insertRecipesData(this.insertRecipeForm.value);
         this.isPending = false;
-      }, 3000);
+      }, 2000);
     } else {
-      this.utilitiesService.validateFormFields(this.insertRecipeForm as RxFormGroup)
+      this.utilitiesService.validateFormFields(
+        this.insertRecipeForm as RxFormGroup
+      );
     }
   }
 
   ngOnDestroy(): void {
     this.homeService.unsubscribe();
   }
-
 }
