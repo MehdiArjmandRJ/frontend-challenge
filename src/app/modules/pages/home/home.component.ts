@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit, OnDestroy, HomePageInterface {
   searchRecipesForm: RxFormGroup;
   recipesData: RecipesResponseInterface[];
 
+
   constructor(
     private homeService: HomeService,
     private rxFormBuilder: RxFormBuilder,

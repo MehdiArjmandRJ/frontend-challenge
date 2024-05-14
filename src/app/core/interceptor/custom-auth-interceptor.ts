@@ -8,11 +8,10 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { catchError, finalize, Observable, of, takeUntil, throwError } from 'rxjs';
+import { catchError, finalize, Observable, of, throwError } from 'rxjs';
 
 import { HttpLoaderService } from '../config/http-loader.service';
 import { LoadingContextModel, LoadingType } from '../models/config';
-import { HttpCancelService } from '../services/httpcancel.service';
 
 export const IS_LOADING_ENABLED = new HttpContextToken<LoadingContextModel>(
   () => ({
@@ -29,7 +28,6 @@ export class CustomAuthInterceptor implements HttpInterceptor {
 
   constructor(
     private httpLoaderService: HttpLoaderService,
-    private httpCancelService: HttpCancelService
   ) {
 
   }
@@ -53,7 +51,6 @@ export class CustomAuthInterceptor implements HttpInterceptor {
 
     this.httpLoaderService.addLoadingListContext(context);
     return next.handle(authReq).pipe(
-      takeUntil(this.httpCancelService.onCancelPendingRequests()),
       catchError((error: HttpErrorResponse) => {
         return throwError(error);
       }),

@@ -10,7 +10,6 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
 //Services
 import { AppInitService } from './config/app-init.service';
-import { HttpCancelService } from './services/httpcancel.service';
 import { GlobalErrorHandler } from './services/globalErrorHandler';
 import { CustomAuthInterceptor } from './interceptor/custom-auth-interceptor';
 
@@ -61,7 +60,6 @@ export function initializeApp(appInitService: AppInitService) {
       multi: true,
     },
     GlobalErrorHandler,
-    HttpCancelService,
   ],
 })
 export class CoreModule {}
